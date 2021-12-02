@@ -3,11 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
     </head>
 
     <body>
@@ -23,17 +18,31 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
+                <form id="form">
+                    <input id="article-url" type="text" name="input" value="" placeholder="Enter Article URL here" />
+          <button type="submit" class="btn-submit" id="sbtn">
+            Submit
+          </button>
+        </form>
             </section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="text"></div>
+                <div id="agreement"></div>
+                <div id="subjectivity"></div>
+                <div id="confidence"></div>
+                <div id="irony"></div>
+                <div id="score_tag"></div>
             </section>
         </main>
+        <script>
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+              })
+            }
+          </script>
 
         <footer>
             <p>This is a footer</p>
